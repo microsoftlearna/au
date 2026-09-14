@@ -701,82 +701,197 @@ max-width:650px;
 }
 
 /* =========================================================
-
 BUTTONS
-
 ========================================================= */
 
 .hero-buttons{
 
-position:absolute;
+    position:absolute;
 
-bottom:-32px;
+    bottom:-32px;
 
-left:50%;
+    left:50%;
 
-transform:translateX(-50%);
+    transform:translateX(-50%);
 
-display:flex;
+    display:flex;
 
-gap:20px;
+    align-items:center;
 
-z-index:10;
+    justify-content:center;
+
+    gap:15px;
+
+    z-index:10;
+
+    width:max-content;
 
 }
+
+
+/* =========================================================
+PRIMARY BUTTON
+========================================================= */
 
 .primary-btn{
 
-background:#0078D4;
+    background:#0078D4;
 
-color:#fff;
+    color:#fff;
 
-padding:18px 38px;
+    padding:18px 30px;
 
-border-radius:50px;
+    border-radius:50px;
 
-font-weight:600;
+    font-weight:600;
 
-text-decoration:none;
+    text-decoration:none;
 
-box-shadow:0 12px 30px rgba(0,120,212,.25);
+    box-shadow:0 12px 30px rgba(0,120,212,.25);
 
-transition:.3s;
+    transition:.3s;
+
+    white-space:nowrap;
 
 }
+
+
+/* =========================================================
+SECONDARY BUTTON
+========================================================= */
 
 .secondary-btn{
 
-background:#fff;
+    background:#fff;
 
-color:#0078D4;
+    color:#0078D4;
 
-padding:18px 38px;
+    padding:18px 30px;
 
-border-radius:50px;
+    border-radius:50px;
 
-font-weight:600;
+    font-weight:600;
 
-text-decoration:none;
+    text-decoration:none;
 
-box-shadow:0 12px 30px rgba(0,0,0,.12);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
 
-transition:.3s;
+    transition:.3s;
+
+    white-space:nowrap;
 
 }
+
+
+/* =========================================================
+STUDY PATH REGISTRATION
+========================================================= */
+
+.study-registration{
+
+    background:#107C10;
+
+    color:#fff;
+
+    padding:18px 30px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    box-shadow:0 12px 30px rgba(16,124,16,.25);
+
+    transition:.3s;
+
+    white-space:nowrap;
+
+}
+
+
+/* =========================================================
+HOVER EFFECTS
+========================================================= */
 
 .primary-btn:hover{
 
-transform:translateY(-5px);
+    transform:translateY(-5px);
 
 }
 
+
 .secondary-btn:hover{
 
-transform:translateY(-5px);
+    transform:translateY(-5px);
 
-background:#0078D4;
+    background:#0078D4;
 
-color:white;
+    color:#fff;
+
+}
+
+
+.study-registration:hover{
+
+    transform:translateY(-5px);
+
+    background:#0b5f0b;
+
+}
+
+
+/* =========================================================
+BUTTON ICONS
+========================================================= */
+
+.hero-buttons i{
+
+    margin-right:7px;
+
+}
+
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    .hero-buttons{
+
+        position:relative;
+
+        bottom:auto;
+
+        left:auto;
+
+        transform:none;
+
+        width:100%;
+
+        margin-top:15px;
+
+        flex-direction:column;
+
+        gap:10px;
+
+    }
+
+
+    .primary-btn,
+    .secondary-btn,
+    .study-registration{
+
+        width:85%;
+
+        max-width:320px;
+
+        text-align:center;
+
+        padding:14px 20px;
+
+    }
 
 }
 
