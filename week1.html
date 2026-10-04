@@ -1,0 +1,543 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Week 1 Attendance | Microsoft Learn Center</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Attendance CSS -->
+    <link rel="stylesheet" href="assets/css/attendance.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+
+        <div class="header-container">
+
+            <div class="header-left">
+                <img src="assets/images/mia_logo.webp" alt="Microsoft Learn">
+                <h2>Microsoft Learn Center</h2>
+            </div>
+
+            <div class="header-right">
+                <h3>Adeleke University</h3>
+                <img src="assets/images/au_logo.webp" alt="Adeleke University">
+            </div>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- ================= MENU ================= -->
+        <nav class="menu-panel" id="menuPanel">
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        <i class="fa-solid fa-house"></i>
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="attendance.html">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Attendance
+                    </a>
+                </li>
+
+                <li>
+                    <a href="certification.html">
+                        <i class="fa-solid fa-certificate"></i>
+                        Certification
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#courses">
+                        <i class="fa-solid fa-book-open"></i>
+                        Learning Paths
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#timetable">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        Semester Timetable
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#community">
+                        <i class="fa-solid fa-users"></i>
+                        Community
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#consultation">
+                        <i class="fa-solid fa-comments"></i>
+                        Consultation
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+    <section class="attendance-hero">
+
+        <div class="attendance-hero-content">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <h1>Week 1 Attendance</h1>
+
+            <p>
+                Microsoft Learn Center Attendance
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ATTENDANCE SECTION ================= -->
+    <main class="attendance-main">
+
+        <div class="attendance-card">
+
+            <!-- STEP 1 -->
+            <div class="attendance-step">
+
+                <div class="step-icon">
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                </div>
+
+                <div class="step-content">
+
+                    <span class="step-number">
+                        STEP 1
+                    </span>
+
+                    <h2>Confirm Your Location</h2>
+
+                    <p>
+                        Location permission is required before you can proceed
+                        to the Week 1 attendance form.
+                    </p>
+
+                    <p class="location-note">
+                        <i class="fa-solid fa-circle-info"></i>
+                        Your location is only accessed by this page and is
+                        not saved or sent anywhere.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="attendance-btn"
+                        id="locationBtn">
+
+                        <i class="fa-solid fa-location-dot"></i>
+                        Allow Location Access
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOCATION STATUS -->
+            <div
+                class="location-status"
+                id="locationStatus"
+                style="display: none;">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <div>
+                    <strong>Location Permission Confirmed</strong>
+
+                    <p>
+                        Your location has been received successfully.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- STEP 2 -->
+            <div
+                class="attendance-step attendance-action"
+                id="attendanceAction"
+                style="display: none;">
+
+                <div class="step-icon">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                </div>
+
+                <div class="step-content">
+
+                    <span class="step-number">
+                        STEP 2
+                    </span>
+
+                    <h2>Take Your Attendance</h2>
+
+                    <p>
+                        You can now proceed to the official Week 1 attendance
+                        form.
+                    </p>
+
+                    <a
+                        href="YOUR_WEEK_1_MICROSOFT_FORM_LINK"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="attendance-btn">
+
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        Take Me to Attendance
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ERROR MESSAGE -->
+            <div
+                class="location-error"
+                id="locationError"
+                style="display: none;">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+                <div>
+                    <strong>Location Access Required</strong>
+
+                    <p id="errorMessage">
+                        Please allow location access to continue.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-left">
+
+                <img src="assets/images/mia_logo.webp"
+                     alt="Microsoft Learn">
+
+                <div>
+                    <h3>Microsoft Learn Center</h3>
+
+                    <p>
+                        Adeleke University, Ede
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="footer-right">
+
+                <p>
+                    © 2026 Microsoft Learn Center.
+                    All rights reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+
+        /* ================= HEADER MENU ================= */
+
+        const header = document.querySelector(".header");
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 30) {
+
+                header.style.boxShadow =
+                    "0 8px 30px rgba(0,120,212,.10)";
+
+            } else {
+
+                header.style.boxShadow =
+                    "0 2px 15px rgba(0,0,0,.06)";
+
+            }
+
+        });
+
+
+        const menuToggle =
+            document.querySelector("#menuToggle");
+
+        const menuPanel =
+            document.querySelector("#menuPanel");
+
+
+        menuToggle.addEventListener("click", () => {
+
+            menuPanel.classList.toggle("active");
+
+            const isOpen =
+                menuPanel.classList.contains("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
+            const menuIcon =
+                menuToggle.querySelector("i");
+
+
+            if (isOpen) {
+
+                menuIcon.classList.remove("fa-bars");
+                menuIcon.classList.add("fa-xmark");
+
+            } else {
+
+                menuIcon.classList.remove("fa-xmark");
+                menuIcon.classList.add("fa-bars");
+
+            }
+
+        });
+
+
+        const menuLinks =
+            document.querySelectorAll(".menu-panel a");
+
+
+        menuLinks.forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                menuPanel.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                const menuIcon =
+                    menuToggle.querySelector("i");
+
+                menuIcon.classList.remove("fa-xmark");
+                menuIcon.classList.add("fa-bars");
+
+            });
+
+        });
+
+
+        /* ================= LOCATION ================= */
+
+        const locationBtn =
+            document.querySelector("#locationBtn");
+
+        const locationStatus =
+            document.querySelector("#locationStatus");
+
+        const attendanceAction =
+            document.querySelector("#attendanceAction");
+
+        const locationError =
+            document.querySelector("#locationError");
+
+        const errorMessage =
+            document.querySelector("#errorMessage");
+
+
+        locationBtn.addEventListener("click", () => {
+
+            locationError.style.display = "none";
+
+            if (!navigator.geolocation) {
+
+                showError(
+                    "Location services are not supported by this browser."
+                );
+
+                return;
+
+            }
+
+
+            locationBtn.disabled = true;
+
+            locationBtn.innerHTML =
+                '<i class="fa-solid fa-spinner fa-spin"></i> Checking Location...';
+
+
+            navigator.geolocation.getCurrentPosition(
+
+                function(position) {
+
+                    /*
+                     * The browser has successfully returned
+                     * the student's location.
+                     *
+                     * These coordinates are NOT saved,
+                     * uploaded, or sent anywhere.
+                     */
+
+                    const latitude =
+                        position.coords.latitude;
+
+                    const longitude =
+                        position.coords.longitude;
+
+                    const accuracy =
+                        position.coords.accuracy;
+
+
+                    console.log(
+                        "Location received:",
+                        latitude,
+                        longitude,
+                        "Accuracy:",
+                        accuracy + " metres"
+                    );
+
+
+                    /* Show confirmation */
+
+                    locationStatus.style.display = "flex";
+
+
+                    /* Hide location button */
+
+                    locationBtn.style.display = "none";
+
+
+                    /* Show attendance button */
+
+                    attendanceAction.style.display = "flex";
+
+                },
+
+
+                function(error) {
+
+                    locationBtn.disabled = false;
+
+                    locationBtn.innerHTML =
+                        '<i class="fa-solid fa-location-dot"></i> Allow Location Access';
+
+
+                    switch (error.code) {
+
+                        case error.PERMISSION_DENIED:
+
+                            showError(
+                                "Location permission was denied. Please allow location access in your browser settings and try again."
+                            );
+
+                            break;
+
+
+                        case error.POSITION_UNAVAILABLE:
+
+                            showError(
+                                "Your location could not be determined. Please check that your device location service is enabled."
+                            );
+
+                            break;
+
+
+                        case error.TIMEOUT:
+
+                            showError(
+                                "The location request timed out. Please try again."
+                            );
+
+                            break;
+
+
+                        default:
+
+                            showError(
+                                "Unable to access your location. Please try again."
+                            );
+
+                    }
+
+                },
+
+                {
+                    enableHighAccuracy: true,
+                    timeout: 15000,
+                    maximumAge: 0
+                }
+
+            );
+
+        });
+
+
+        function showError(message) {
+
+            locationError.style.display = "flex";
+
+            errorMessage.textContent = message;
+
+        }
+
+    </script>
+
+</body>
+</html>
+```
