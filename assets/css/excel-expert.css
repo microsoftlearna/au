@@ -1,0 +1,895 @@
+```css
+/* =========================================================
+   MICROSOFT EXCEL EXPERT LEARNING PATH
+   Adeleke University Microsoft Learn Center
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f7f9fb;
+    color: #222;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+}
+
+.header-container {
+    max-width: 1250px;
+    margin: auto;
+    min-height: 78px;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Left Header */
+
+.left-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.left-header img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.left-header h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #217346;
+    line-height: 1.2;
+}
+
+.left-header p {
+    font-size: 12px;
+    color: #777;
+    margin-top: 2px;
+}
+
+/* Main Navigation */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.main-nav a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    transition: 0.3s ease;
+}
+
+.main-nav a i {
+    color: #217346;
+}
+
+.main-nav a:hover {
+    color: #217346;
+}
+
+/* Right Header */
+
+.right-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: right;
+}
+
+.right-header h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+}
+
+.right-header p {
+    font-size: 11px;
+    color: #777;
+}
+
+.right-header img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+    min-height: 430px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.55)
+        ),
+        url("../images/excel-expert_hero.png");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 850px;
+    padding: 60px 25px;
+    color: #ffffff;
+}
+
+.hero-icon {
+    font-size: 55px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    max-width: 720px;
+    margin: 0 auto 28px;
+
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.94);
+}
+
+.start-btn {
+    display: inline-block;
+
+    background: #ffffff;
+    color: #217346;
+
+    padding: 13px 28px;
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.start-btn:hover {
+    background: #eaf5ee;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   GENERAL SECTION
+   ========================================================= */
+
+.progress-section,
+.projects-section,
+.video-section,
+.quiz-section,
+.next-path-section {
+    max-width: 1150px;
+    margin: auto;
+    padding: 70px 25px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+    color: #222;
+    margin-bottom: 6px;
+}
+
+.section-heading p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* =========================================================
+   LEARNING PROGRESS
+   ========================================================= */
+
+.progress-card {
+    background: #ffffff;
+
+    border: 1px solid #e7e7e7;
+    border-radius: 12px;
+
+    padding: 25px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 12px;
+
+    font-size: 14px;
+}
+
+.progress-info span {
+    color: #555;
+}
+
+.progress-info strong {
+    color: #217346;
+    font-size: 16px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 12px;
+
+    background: #e8eee9;
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 85%;
+
+    background: #217346;
+    border-radius: 20px;
+
+    transition: width 1s ease;
+}
+
+/* =========================================================
+   PROJECTS
+   ========================================================= */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    background: #ffffff;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+
+    padding: 28px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+    transition: 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px rgba(33, 115, 70, 0.12);
+
+    border-color: rgba(33, 115, 70, 0.35);
+}
+
+.project-number {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eaf5ee;
+    color: #217346;
+
+    border-radius: 50%;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+.project-card h3 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 7px;
+}
+
+.project-card h4 {
+    font-size: 13px;
+    color: #217346;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+.project-links {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.project-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px 12px;
+
+    border-radius: 5px;
+
+    background: #f4f8f5;
+    color: #217346;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.project-links a:hover {
+    background: #217346;
+    color: #ffffff;
+}
+
+.project-links a i {
+    width: 16px;
+    text-align: center;
+}
+
+/* =========================================================
+   VIDEO SECTION
+   ========================================================= */
+
+.video-section {
+    text-align: center;
+}
+
+.video-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.video-player {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background: #000;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+.video-player iframe {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+}
+
+.youtube-watch {
+    margin-top: 18px;
+}
+
+.youtube-watch a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #217346;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.youtube-watch a:hover {
+    color: #14532d;
+}
+
+.youtube-watch i {
+    font-size: 18px;
+}
+
+/* =========================================================
+   QUIZ SECTION
+   ========================================================= */
+
+.quiz-section {
+    text-align: center;
+}
+
+.quiz-card {
+    max-width: 900px;
+    margin: auto;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+
+    padding: 40px 30px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.quiz-card h3 {
+    font-size: 23px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.quiz-card p {
+    max-width: 700px;
+    margin: 0 auto 25px;
+
+    color: #666;
+    font-size: 14px;
+}
+
+.quiz-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.quiz-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 12px 22px;
+
+    border-radius: 6px;
+
+    background: #217346;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.quiz-btn:hover {
+    background: #14532d;
+    transform: translateY(-2px);
+}
+
+.quiz-btn.secondary {
+    background: #eaf5ee;
+    color: #217346;
+}
+
+.quiz-btn.secondary:hover {
+    background: #d8ecdf;
+}
+
+/* =========================================================
+   NEXT LEARNING PATH
+   ========================================================= */
+
+.next-path-section {
+    text-align: center;
+}
+
+.next-path-card {
+    max-width: 800px;
+    margin: auto;
+
+    background: #eaf5ee;
+
+    border: 1px solid #cfe5d6;
+    border-radius: 12px;
+
+    padding: 35px 25px;
+}
+
+.next-path-card i {
+    font-size: 35px;
+    color: #217346;
+
+    margin-bottom: 12px;
+}
+
+.next-path-card h3 {
+    font-size: 22px;
+    color: #222;
+
+    margin-bottom: 8px;
+}
+
+.next-path-card p {
+    color: #666;
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+.next-path-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    background: #217346;
+    color: #ffffff;
+
+    padding: 12px 22px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.next-path-btn:hover {
+    background: #14532d;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer{
+    background:#1F2937;
+
+    color:#fff;
+
+    padding:70px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap:50px;
+}
+
+.footer-logo{
+    height:60px;
+
+    width:auto;
+
+    margin-bottom:18px;
+}
+
+.footer h3{
+    margin-bottom:20px;
+
+    font-size:22px;
+}
+
+.footer p{
+    line-height:1.9;
+
+    color:#D1D5DB;
+}
+
+.footer-links ul{
+    padding:0;
+}
+
+.footer-links li{
+    margin-bottom:12px;
+}
+
+.footer-links a{
+    color:#D1D5DB;
+
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:#fff;
+
+    padding-left:8px;
+}
+
+.footer-contact p{
+    margin-bottom:14px;
+}
+
+.footer-contact i{
+    margin-right:10px;
+
+    color:#4ADE80;
+}
+
+.footer hr{
+    margin:45px 0 25px;
+
+    border:none;
+
+    height:1px;
+
+    background:
+        rgba(255,255,255,.15);
+}
+
+.copyright{
+    text-align:center;
+
+    font-size:14px;
+
+    color:#C7CDD8;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .header-container {
+        gap: 15px;
+    }
+
+    .main-nav {
+        gap: 16px;
+    }
+
+    .main-nav a {
+        font-size: 12px;
+    }
+
+    .right-header h3 {
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .header-container {
+        min-height: 70px;
+        padding: 0 15px;
+    }
+
+    .left-header img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .left-header h2 {
+        font-size: 15px;
+    }
+
+    .left-header p {
+        font-size: 10px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .right-header {
+        gap: 7px;
+    }
+
+    .right-header h3 {
+        font-size: 11px;
+    }
+
+    .right-header p {
+        font-size: 9px;
+    }
+
+    .right-header img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero-content {
+        padding: 50px 20px;
+    }
+
+    .hero-icon {
+        font-size: 45px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .start-btn {
+        padding: 11px 22px;
+    }
+
+    .progress-section,
+    .projects-section,
+    .video-section,
+    .quiz-section,
+    .next-path-section {
+        padding: 55px 18px;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 25px;
+    }
+
+    .quiz-card {
+        padding: 30px 20px;
+    }
+
+    .next-path-card {
+        padding: 30px 20px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .right-header div {
+        display: none;
+    }
+
+    .right-header img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .section-heading h2 {
+        font-size: 23px;
+    }
+
+    .progress-card {
+        padding: 20px;
+    }
+
+    .progress-info {
+        font-size: 12px;
+    }
+
+    .project-card h3 {
+        font-size: 18px;
+    }
+
+    .quiz-buttons {
+        flex-direction: column;
+    }
+
+    .quiz-btn {
+        width: 100%;
+    }
+
+    .next-path-card h3 {
+        font-size: 19px;
+    }
+}
+```
+
+**Important:** this CSS expects your Excel Expert hero image to be:
+
+`assets/images/excel-expert_hero.jpg`
+
+If your actual image has a different filename, only change that filename in the `.hero` background line.
