@@ -43,30 +43,28 @@ VIDEO PLAYER
 
 ==========================================================*/
 
-const lessonButtons=document.querySelectorAll(".lesson-btn");
+const lessonButtons = document.querySelectorAll(".lesson-btn");
+const wordVideo = document.getElementById("wordVideo");
 
-const video=document.getElementById("wordVideo");
+lessonButtons.forEach(button => {
 
-const source=video.querySelector("source");
+    button.addEventListener("click", function () {
 
+        // Get the YouTube video ID from the selected button
+        const videoId = this.getAttribute("data-video");
 
-lessonButtons.forEach(button=>{
+        // Change the video on the right
+        wordVideo.src = "https://www.youtube.com/embed/" + videoId;
 
-button.addEventListener("click",()=>{
+        // Remove active state from all buttons
+        lessonButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
 
-lessonButtons.forEach(btn=>btn.classList.remove("active"));
+        // Make the selected lesson active
+        this.classList.add("active");
 
-button.classList.add("active");
-
-const newVideo=button.dataset.video;
-
-source.src=newVideo;
-
-video.load();
-
-video.play();
-
-});
+    });
 
 });
 
