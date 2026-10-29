@@ -32,7 +32,7 @@ registrationForm.addEventListener("submit", async function (event) {
 
     if (
         !POWER_AUTOMATE_URL ||
-        POWER_AUTOMATE_URL === "https://default3c8b0c3b170b4259903232d86a352b.2b.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/10/workflows/597fc267652649dba6972fd5e478beef/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=WjCwWQByh3Q7h54MNsbya7FlMDrsp2iWRmuo6Osh390"
+        POWER_AUTOMATE_URL === "PASTE_YOUR_POWER_AUTOMATE_URL_HERE"
     ) {
         showMessage(
             "Registration is not connected yet. Please try again later.",
