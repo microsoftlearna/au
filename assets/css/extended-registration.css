@@ -1,0 +1,278 @@
+
+/* ========================================
+   EXTENDED REGISTRATION PAGE
+   Microsoft Learn Center | Adeleke University
+======================================== */
+
+:root {
+    --primary-blue: #0078d4;
+    --dark-blue: #005a9e;
+    --light-blue: #eaf4fc;
+    --text-color: #242424;
+    --muted-text: #616161;
+    --white: #ffffff;
+    --border-color: #e1e5ea;
+    --background-color: #f5f8fc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+/* Header */
+
+.registration-header {
+    width: 100%;
+    background: var(--white);
+    padding: 15px 7%;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.brand img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+/* Main content */
+
+.registration-container {
+    width: min(100% - 32px, 900px);
+    margin: 50px auto;
+}
+
+.welcome-section {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.step-label {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 30px;
+    background: #dceeff;
+    color: var(--dark-blue);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+.welcome-section h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: 18px;
+    color: #1b1b1b;
+}
+
+.welcome-section > p:not(.step-label):not(.learn-id-display) {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--muted-text);
+    font-size: 1rem;
+}
+
+.learn-id-display {
+    margin-top: 15px;
+    color: var(--dark-blue);
+    font-size: 0.95rem;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+/* Registration cards */
+
+.registration-card {
+    position: relative;
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 35px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.registration-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--light-blue);
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.registration-card h2 {
+    font-size: 1.55rem;
+    line-height: 1.3;
+    margin-bottom: 14px;
+}
+
+.registration-card > p:not(.link-note) {
+    color: var(--muted-text);
+    margin-bottom: 24px;
+}
+
+/* Buttons */
+
+.registration-button,
+.home-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 7px;
+    background: var(--primary-blue);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.registration-button:hover,
+.home-button:hover {
+    background: var(--dark-blue);
+    transform: translateY(-1px);
+}
+
+.registration-button:focus-visible,
+.home-button:focus-visible,
+.brand:focus-visible {
+    outline: 3px solid #ffbf47;
+    outline-offset: 4px;
+}
+
+.link-note {
+    color: var(--muted-text);
+    font-size: 0.82rem;
+    margin-top: 13px;
+}
+
+/* Completion section */
+
+.completion-note {
+    text-align: center;
+    background: var(--light-blue);
+    border-radius: 16px;
+    padding: 35px 25px;
+    margin-top: 35px;
+}
+
+.completion-note h2 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.completion-note p {
+    max-width: 600px;
+    margin: 0 auto 22px;
+    color: var(--muted-text);
+}
+
+.home-button {
+    background: #242424;
+}
+
+.home-button:hover {
+    background: #444444;
+}
+
+/* Footer */
+
+.registration-footer {
+    padding: 24px 16px;
+    text-align: center;
+    color: var(--muted-text);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    background: var(--white);
+}
+
+/* Responsive design */
+
+@media (max-width: 600px) {
+    .registration-header {
+        padding: 12px 18px;
+    }
+
+    .brand {
+        font-size: 0.95rem;
+        gap: 9px;
+    }
+
+    .brand img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .registration-container {
+        margin: 30px auto;
+    }
+
+    .welcome-section {
+        margin-bottom: 25px;
+    }
+
+    .registration-card {
+        padding: 24px 20px;
+        border-radius: 12px;
+    }
+
+    .registration-card h2 {
+        font-size: 1.3rem;
+    }
+
+    .registration-button,
+    .home-button {
+        width: 100%;
+    }
+
+    .completion-note {
+        padding: 28px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
