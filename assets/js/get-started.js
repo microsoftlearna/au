@@ -4,9 +4,6 @@
    BIODATA REGISTRATION
 ======================================== */
 
-// Replace this placeholder with your regenerated
-// Power Automate HTTP POST URL. Keep the URL private
-// if you later decide to restrict public submissions.
 const POWER_AUTOMATE_URL = "https://default3c8b0c3b170b4259903232d86a352b.2b.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/10/workflows/597fc267652649dba6972fd5e478beef/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=WjCwWQByh3Q7h54MNsbya7FlMDrsp2iWRmuo6Osh390";
 
 const registrationForm = document.getElementById("registrationForm");
@@ -80,11 +77,7 @@ registrationForm.addEventListener("submit", async function (event) {
     formMessage.textContent = "";
 
     try {
-        /*
-         * text/plain avoids the browser's JSON-content-type
-         * preflight request. The Power Automate Response action
-         * must still return the appropriate CORS header.
-         */
+        
         const response = await fetch(POWER_AUTOMATE_URL, {
             method: "POST",
             headers: {
