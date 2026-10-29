@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Congratulations | Microsoft Student Ambassadors</title>
+
+    <link rel="stylesheet" href="assets/css/congratulations.css">
+</head>
+<body>
+
+    <!-- Celebration overlay -->
+    <div id="celebrationModal" class="celebration-overlay"
+         role="dialog" aria-modal="true" aria-labelledby="congratsTitle">
+
+        <div class="confetti-container" id="confettiContainer"
+             aria-hidden="true"></div>
+
+        <div class="celebration-card">
+            <div class="celebration-icon" aria-hidden="true">🎉</div>
+
+            <p class="celebration-label">STEP 1 COMPLETED</p>
+
+            <h1 id="congratsTitle">Congratulations!</h1>
+
+            <p class="celebration-message">
+                Your biodata registration has been completed.
+                You are one step closer to joining the community!
+            </p>
+
+            <button type="button" id="continueCelebration">
+                Continue to Step 2
+                <span aria-hidden="true">&rarr;</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main page -->
+    <main class="next-step-container">
+
+        <header class="next-step-header">
+            <a href="ambassadors.html" class="brand">
+                <img src="assets/images/mia_logo.webp"
+                     alt="Microsoft Learn Center logo">
+                <span>Microsoft Student Ambassadors</span>
+            </a>
+
+            <span class="step-indicator">STEP 2 OF REGISTRATION</span>
+        </header>
+
+        <section class="welcome-section">
+
+            <div class="welcome-badge">YOUR JOURNEY CONTINUES</div>
+
+            <h1>Let's Get You Ready!</h1>
+
+            <div class="typing-area" aria-live="polite">
+                <p id="typingText"></p>
+                <span class="typing-cursor" aria-hidden="true"></span>
+            </div>
+
+            <div class="learn-setup-card">
+
+                <div class="learn-icon" aria-hidden="true">
+                    <span>ML</span>
+                </div>
+
+                <h2>Set Up Your Microsoft Learn Portal</h2>
+
+                <p>
+                    Microsoft Learn is where you can explore technology,
+                    develop new skills and track your learning progress.
+                </p>
+
+                <p class="instruction">
+                    Click the button below to open Microsoft Learn
+                    in a new tab.
+                </p>
+
+                <a
+                    href="https://learn.microsoft.com/en-us/"
+                    class="learn-button"
+                    id="microsoftLearnButton"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <span>Microsoft Learn</span>
+                    <span aria-hidden="true">&#8599;</span>
+                </a>
+
+                <div class="learn-id-section">
+
+                    <label for="learnId">
+                        Input Your Microsoft Learn ID
+                    </label>
+
+                    <p class="field-description">
+                        After opening Microsoft Learn, sign in and locate
+                        your Learn profile ID. Enter it below to continue.
+                    </p>
+
+                    <input
+                        type="text"
+                        id="learnId"
+                        name="learnId"
+                        placeholder="Enter your Microsoft Learn ID"
+                        autocomplete="off"
+                        required>
+
+                    <p id="learnIdMessage" class="learn-id-message"
+                       role="status" aria-live="polite"></p>
+
+                    <button type="button" id="continueToExtended"
+                            class="continue-button">
+                        Continue to Next Step
+                        <span aria-hidden="true">&rarr;</span>
+                    </button>
+
+                    <p class="security-note">
+                        You must enter your Microsoft Learn ID to continue.
+                        Do not enter your Microsoft account password here.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="next-step-footer">
+            <p>
+                Adeleke University Microsoft Learn Center
+            </p>
+        </footer>
+
+    </main>
+
+    <script src="assets/js/congratulations.js"></script>
+</body>
+</html>

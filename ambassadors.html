@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Microsoft Student Ambassadors | Adeleke University</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="assets/css/ambassadors.css">
+</head>
+
+<body>
+
+    <!-- ================= HERO SLIDER ================= -->
+
+    <section class="ambassador-slider" id="ambassadorSlider">
+
+        <!-- SLIDE 1 -->
+        <div class="slide active">
+
+            <div class="slide-background slide-one"></div>
+
+            <div class="slide-overlay"></div>
+
+            <div class="slide-content">
+
+                <span class="slide-label">MICROSOFT LEARN CENTER</span>
+
+                <h1>Microsoft Student Ambassadors</h1>
+
+                <h2>Become a Student Ambassador</h2>
+
+                <p>
+                    Join a global community of students exploring what's
+                    possible with Microsoft technology.
+                </p>
+
+                <div class="slide-buttons">
+
+                    <a href="#get-started" class="slide-btn primary-btn">
+                        Get Started
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <button type="button" class="slide-btn secondary-btn open-info-modal">
+                        Learn More
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SLIDE 2 -->
+        <div class="slide">
+
+            <div class="slide-background slide-two"></div>
+
+            <div class="slide-overlay"></div>
+
+            <div class="slide-content">
+
+                <span class="slide-label">YOUR IDEAS. YOUR IMPACT.</span>
+
+                <h1>Start Something Big</h1>
+
+                <p>
+                    The future belongs to people who take the first step,
+                    and this is where you begin.
+                </p>
+
+                <div class="slide-buttons">
+
+                    <a href="#get-started" class="slide-btn primary-btn">
+                        Get Started
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <button type="button" class="slide-btn secondary-btn open-info-modal">
+                        Learn More
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SLIDE 3 -->
+        <div class="slide">
+
+            <div class="slide-background slide-three"></div>
+
+            <div class="slide-overlay"></div>
+
+            <div class="slide-content">
+
+                <span class="slide-label">LEAD. CONNECT. INSPIRE.</span>
+
+                <h1>Represent Microsoft on Campus</h1>
+
+                <p>
+                    Inspire your fellow students, share your knowledge,
+                    and help build a thriving technology community on campus.
+                </p>
+
+                <div class="slide-buttons">
+
+                    <a href="#get-started" class="slide-btn primary-btn">
+                        Get Started
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <button type="button" class="slide-btn secondary-btn open-info-modal">
+                        Learn More
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PREVIOUS BUTTON -->
+        <button class="slider-arrow prev-arrow"
+                id="prevSlide"
+                aria-label="Previous slide">
+
+            <i class="fa-solid fa-chevron-left"></i>
+
+        </button>
+
+
+        <!-- NEXT BUTTON -->
+        <button class="slider-arrow next-arrow"
+                id="nextSlide"
+                aria-label="Next slide">
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </button>
+
+
+        <!-- SLIDE INDICATORS -->
+        <div class="slider-dots">
+
+            <button class="slider-dot active"
+                    data-slide="0"
+                    aria-label="Go to slide 1"></button>
+
+            <button class="slider-dot"
+                    data-slide="1"
+                    aria-label="Go to slide 2"></button>
+
+            <button class="slider-dot"
+                    data-slide="2"
+                    aria-label="Go to slide 3"></button>
+
+        </div>
+
+
+        <!-- SLIDE COUNTER -->
+        <div class="slide-counter">
+
+            <span id="currentSlide">01</span>
+            <span class="counter-divider"></span>
+            <span>03</span>
+
+        </div>
+
+    </section>
+
+
+	<!-- ================= AMBASSADOR INFORMATION MODAL ================= -->
+
+<div class="info-modal" id="ambassadorInfoModal"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modalTitle"
+     aria-hidden="true">
+
+    <div class="info-modal-backdrop" id="modalBackdrop"></div>
+
+    <div class="info-modal-content">
+
+        <!-- TOP BAR -->
+        <div class="modal-header">
+            <div>
+                <span class="modal-eyebrow">MICROSOFT LEARN CENTER</span>
+                <h2 id="modalTitle">Microsoft Student Ambassadors</h2>
+            </div>
+
+            <button type="button"
+                    class="modal-close"
+                    id="closeInfoModal"
+                    aria-label="Close information">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+
+        <!-- SCROLLABLE INFORMATION -->
+        <div class="modal-body">
+
+            <section class="info-section">
+                <h3><span>01</span> Overview</h3>
+
+                <p>
+                    The Microsoft Learn Student Ambassadors (MLSA) program
+                    is a global initiative for university students to explore
+                    Microsoft technologies, build projects, and grow their
+                    communities. Ambassadors can develop practical skills
+                    using technologies such as Azure, AI, GitHub, Power
+                    Platform, and Microsoft Learn, while strengthening their
+                    leadership, mentorship, and professional skills.
+                </p>
+
+                <p>
+                    The program encourages responsible AI advocacy,
+                    community impact, and digital leadership. Students can
+                    share knowledge, teach others, and support technology
+                    communities both on campus and online.
+                </p>
+            </section>
+
+
+            <section class="info-section">
+                <h3><span>02</span> Key Benefits</h3>
+
+                <div class="benefit-item">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <div>
+                        <h4>Technical Learning</h4>
+                        <p>
+                            Explore Microsoft Learn, cloud technologies,
+                            AI tools, and certification opportunities.
+                            Access to specific benefits may depend on
+                            current program offerings.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <div>
+                        <h4>Professional Growth</h4>
+                        <p>
+                            Build your portfolio through projects,
+                            mentorship, networking, and practical experience.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <i class="fa-solid fa-people-group"></i>
+                    <div>
+                        <h4>Community Engagement</h4>
+                        <p>
+                            Organize workshops, talks, and learning events
+                            that help fellow students discover technology.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <i class="fa-solid fa-award"></i>
+                    <div>
+                        <h4>Recognition</h4>
+                        <p>
+                            Showcase your contributions and achievements
+                            as you develop your technical and leadership skills.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <i class="fa-solid fa-earth-africa"></i>
+                    <div>
+                        <h4>Global Network</h4>
+                        <p>
+                            Connect with students and technology enthusiasts
+                            from different communities around the world.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="info-section">
+                <h3><span>03</span> Eligibility</h3>
+
+                <ul class="info-list">
+                    <li>Be a college or university student when applying.</li>
+                    <li>Have a genuine interest in technology and community building.</li>
+                    <li>Be willing to share knowledge through events, tutorials, or other activities.</li>
+                    <li>Have or be able to create a Microsoft account.</li>
+                    <li>Bring curiosity, enthusiasm, and a willingness to learn. You do not need to be an expert to begin exploring.</li>
+                </ul>
+
+                <p class="small-note">
+                    Check the official program website for current eligibility
+                    requirements and availability.
+                </p>
+            </section>
+
+
+            <section class="info-section">
+                <h3><span>04</span> How to Join</h3>
+
+                <div class="join-step">
+                    <span>1</span>
+                    <div>
+                        <h4>Visit the Official Portal</h4>
+                        <p>Review the program information and available application options.</p>
+                    </div>
+                </div>
+
+                <div class="join-step">
+                    <span>2</span>
+                    <div>
+                        <h4>Set Up Microsoft Learn</h4>
+                        <p>Create or access your Microsoft Learn profile.</p>
+                    </div>
+                </div>
+
+                <div class="join-step">
+                    <span>3</span>
+                    <div>
+                        <h4>Follow the Application Instructions</h4>
+                        <p>Complete the steps shown on the official portal and check your email for updates.</p>
+                    </div>
+                </div>
+
+                <div class="join-step">
+                    <span>4</span>
+                    <div>
+                        <h4>Explore the Community</h4>
+                        <p>Follow the current instructions for accessing community platforms and program resources.</p>
+                    </div>
+                </div>
+
+                <div class="join-step">
+                    <span>5</span>
+                    <div>
+                        <h4>Find Your Contribution Path</h4>
+                        <p>Look for opportunities that match your interests, whether in technical learning, AI, or community engagement.</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="info-section">
+                <h3><span>05</span> Activities and Engagement</h3>
+
+                <ul class="info-list">
+                    <li>Host technical workshops, webinars, and community events.</li>
+                    <li>Create tutorials and share useful learning resources.</li>
+                    <li>Take part in AI challenges, competitions, and hackathons.</li>
+                    <li>Collaborate with other students on projects and technology initiatives.</li>
+                    <li>Help peers discover Microsoft technologies and learning opportunities.</li>
+                </ul>
+            </section>
+
+
+            <section class="info-section">
+                <h3><span>06</span> Your Impact</h3>
+
+                <p>
+                    The MLSA program offers a way to turn your interest in
+                    technology into practical experience. By learning,
+                    building projects, and supporting your community, you
+                    can develop skills that strengthen your professional
+                    profile and prepare you for an evolving, AI-driven world.
+                </p>
+
+                <p>
+                    Your journey can start with one workshop, one project,
+                    or one conversation that inspires another student to learn.
+                    Learn, lead, and innovate while connecting with a wider
+                    community of student technology enthusiasts.
+                </p>
+            </section>
+
+        </div>
+
+
+        <!-- ONLY ACTION AT THE END -->
+        <div class="modal-footer">
+            <a href="https://studentambassadors.microsoft.com/"
+               class="modal-get-started"
+               target="_blank"
+               rel="noopener noreferrer">
+                Get Started
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+    <!-- PAGE JAVASCRIPT -->
+    <script src="assets/js/ambassadors.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 1 | Microsoft Student Ambassadors</title>
+    <link rel="stylesheet" href="assets/css/get-started.css">
+</head>
+<body>
+
+    <header class="registration-header">
+        <a href="ambassadors.html" class="back-link">&larr; Back to Home</a>
+        <div class="brand">
+            <img src="assets/images/mia_logo.webp" alt="Microsoft Learn Center">
+            <span>Microsoft Student Ambassadors</span>
+        </div>
+    </header>
+
+    <main class="registration-container">
+
+        <section class="registration-intro">
+            <span class="eyebrow">ADELEKE UNIVERSITY</span>
+            <h1>STEP 1: Complete Your Biodata Registration</h1>
+            <p>
+                Welcome! Complete your biodata below to begin your journey
+                with the Microsoft Student Ambassadors community.
+            </p>
+        </section>
+
+        <section class="registration-card">
+            <div class="form-heading">
+                <h2>Student Biodata</h2>
+                <p>Fields marked with <span>*</span> are required.</p>
+            </div>
+
+            <form id="registrationForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="firstName">First Name <span>*</span></label>
+                        <input type="text" id="firstName" name="firstName"
+                               autocomplete="given-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name <span>*</span></label>
+                        <input type="text" id="lastName" name="lastName"
+                               autocomplete="family-name" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="middleName">Middle Name</label>
+                        <input type="text" id="middleName" name="middleName">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="studentEmail">Student Email <span>*</span></label>
+                        <input type="email" id="studentEmail" name="studentEmail"
+                               placeholder="yourname@adelekeuniversity.edu.ng"
+                               autocomplete="email" required>
+                        <small>Use your official Adeleke University student email.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number <span>*</span></label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber"
+                               autocomplete="tel" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="matricNumber">Matric Number <span>*</span></label>
+                        <input type="text" id="matricNumber" name="matricNumber"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="faculty">Faculty <span>*</span></label>
+                        <input type="text" id="faculty" name="faculty" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Department <span>*</span></label>
+                        <input type="text" id="department" name="department" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="currentLevel">Current Level <span>*</span></label>
+                        <select id="currentLevel" name="currentLevel" required>
+                            <option value="">Select your current level</option>
+                            <option value="100L">100L</option>
+                            <option value="200L">200L</option>
+                            <option value="300L">300L</option>
+                            <option value="400L">400L</option>
+                            <option value="500L">500L</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="motivation">
+                            Why do you want to become a Microsoft Student Ambassador?
+                            <span>*</span>
+                        </label>
+                        <textarea id="motivation" name="motivation" rows="6"
+                                  placeholder="Tell us about your interests, motivation and what you hope to contribute..."
+                                  required></textarea>
+                    </div>
+
+                </div>
+
+                <p class="privacy-note">
+                    Your information will be used to process your registration
+                    for the Microsoft Student Ambassadors initiative at
+                    Adeleke University.
+                </p>
+
+                <div id="formMessage" class="form-message"
+                     role="status" aria-live="polite"></div>
+
+                <button type="submit" id="submitButton">
+                    Submit Biodata <span aria-hidden="true">&rarr;</span>
+                </button>
+
+            </form>
+        </section>
+    </main>
+
+    <footer class="registration-footer">
+        <p>&copy; <span id="currentYear"></span>
+           Adeleke University Microsoft Learn Center</p>
+    </footer>
+
+    <script src="assets/js/get-started.js"></script>
+</body>
+</html>
