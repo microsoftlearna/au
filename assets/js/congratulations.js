@@ -1,249 +1,249 @@
 
-/* =========================================
-   MICROSOFT STUDENT AMBASSADORS
-   CONGRATULATIONS PAGE
-========================================= */
+/*
+ * ADELEKE UNIVERSITY
+ * MICROSOFT LEARN CENTER
+ * Microsoft Learn ID Submission
+ *
+ * Website -> Cloudflare Worker -> Power Automate -> Excel
+ */
 
-document.addEventListener("DOMContentLoaded", function () {
-    const celebrationModal = document.getElementById("celebrationModal");
-    const continueCelebration = document.getElementById("continueCelebration");
-    const confettiContainer = document.getElementById("confettiContainer");
-    const typingText = document.getElementById("typingText");
-    const learnIdInput = document.getElementById("learnId");
-    const learnIdMessage = document.getElementById("learnIdMessage");
-    const continueToExtended = document.getElementById("continueToExtended");
-    const learnButton = document.getElementById("microsoftLearnButton");
+"use strict";
 
-    // Update footer year if present
+(() => {
+
+    const REGISTRATION_API_URL =
+        "https://au-student-registration.aumia.workers.dev/";
+
+    const form = document.getElementById("learnIdForm");
+    const submitButton = document.getElementById("learnIdSubmitButton");
+    const messageBox = document.getElementById("learnIdMessage");
     const yearElement = document.getElementById("currentYear");
+
+    // Update footer year.
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
     }
 
-    // Respect the visitor's reduced-motion preference
-    const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    ).matches;
+    if (!form) {
+        console.error("Microsoft Learn ID form was not found.");
+        return;
+    }
 
-    /* =========================================
-       1. CONFETTI CELEBRATION
-    ========================================= */
+    let isSubmitting = false;
 
-    function createConfetti() {
-        if (!confettiContainer || reduceMotion) return;
+    // Display messages.
+    function showMessage(message, type = "info") {
 
-        confettiContainer.replaceChildren();
+        if (!messageBox) {
+            console.log(message);
+            return;
+        }
 
-        const confettiCount = 100;
-        const confettiColors = [
-            "#0078d4",
-            "#50e6ff",
-            "#107c10",
-            "#ffb900",
-            "#d83b01",
-            "#8661c5",
-            "#e3008c"
-        ];
+        messageBox.textContent = message;
+        messageBox.className = `form-message ${type}`;
 
-        for (let i = 0; i < confettiCount; i++) {
-            const piece = document.createElement("span");
+        messageBox.setAttribute(
+            "role",
+            type === "error" ? "alert" : "status"
+        );
+    }
 
-            piece.className = "confetti-piece";
-            piece.style.left = Math.random() * 100 + "%";
-            piece.style.backgroundColor =
-                confettiColors[
-                    Math.floor(Math.random() * confettiColors.length)
-                ];
+    // Get input values.
+    function getValue(id) {
 
-            piece.style.setProperty(
-                "--fall-duration",
-                (2.5 + Math.random() * 3) + "s"
+        const field = document.getElementById(id);
+
+        return field && typeof field.value === "string"
+            ? field.value.trim()
+            : "";
+    }
+
+    // Control submit button.
+    function setLoading(loading) {
+
+        if (!submitButton) return;
+
+        submitButton.disabled = loading;
+        submitButton.setAttribute("aria-busy", String(loading));
+
+        const label = submitButton.querySelector(".button-label");
+
+        if (label) {
+            label.textContent = loading
+                ? "Saving Microsoft Learn ID..."
+                : "Save Microsoft Learn ID";
+        }
+    }
+
+    // Submit Microsoft Learn ID.
+    form.addEventListener("submit", async (event) => {
+
+        event.preventDefault();
+
+        if (isSubmitting) return;
+
+        const matricNumber = getValue("matricNumber");
+        const microsoftLearnID = getValue("microsoftLearnID");
+
+        // Validate required fields.
+        if (!matricNumber || !microsoftLearnID) {
+
+            showMessage(
+                "Please enter both your Matriculation Number and Microsoft Learn ID.",
+                "error"
             );
-
-            piece.style.setProperty(
-                "--fall-delay",
-                (Math.random() * 1.5) + "s"
-            );
-
-            if (Math.random() > 0.5) {
-                piece.style.borderRadius = "50%";
-            }
-
-            confettiContainer.appendChild(piece);
-        }
-    }
-
-    /* =========================================
-       2. SHOW CONGRATULATIONS POPUP
-    ========================================= */
-
-    function openCelebration() {
-        if (!celebrationModal) return;
-
-        celebrationModal.classList.remove("hidden");
-        document.body.classList.add("modal-open");
-        createConfetti();
-
-        if (continueCelebration) {
-            continueCelebration.focus();
-        }
-    }
-
-    function closeCelebration() {
-        if (!celebrationModal) return;
-
-        celebrationModal.classList.add("hidden");
-        document.body.classList.remove("modal-open");
-
-        // Start the typing messages after the popup closes
-        startTypingSequence();
-    }
-
-    if (continueCelebration) {
-        continueCelebration.addEventListener("click", closeCelebration);
-    }
-
-    // Start the celebration when the page loads
-    openCelebration();
-
-    /* =========================================
-       3. TYPING ANIMATION
-    ========================================= */
-
-    const messages = [
-        "Now that you are ready to join the Community",
-        "Firstly, let's set up your Microsoft Learn portal",
-        "Click the Microsoft Learn button below to get started"
-    ];
-
-    let messageIndex = 0;
-    let typingStarted = false;
-    let typingTimer = null;
-
-    function typeMessage(message, characterIndex = 0) {
-        if (!typingText) return;
-
-        if (characterIndex === 0) {
-            typingText.textContent = "";
-        }
-
-        if (characterIndex < message.length) {
-            typingText.textContent += message.charAt(characterIndex);
-
-            typingTimer = setTimeout(function () {
-                typeMessage(message, characterIndex + 1);
-            }, reduceMotion ? 0 : 42);
 
             return;
         }
 
-        // Pause before typing the next message
-        typingTimer = setTimeout(function () {
-            messageIndex++;
-
-            if (messageIndex < messages.length) {
-                typeMessage(messages[messageIndex], 0);
-            }
-        }, reduceMotion ? 300 : 1200);
-    }
-
-    function startTypingSequence() {
-        if (typingStarted) return;
-
-        typingStarted = true;
-        messageIndex = 0;
-
-        if (typingText) {
-            typingText.textContent = "";
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
         }
 
-        typeMessage(messages[messageIndex]);
-    }
+        const payload = {
+            action: "saveMicrosoftLearnId",
+            MatricNumber: matricNumber,
+            MicrosoftLearnID: microsoftLearnID
+        };
 
-    /* =========================================
-       4. MICROSOFT LEARN LINK
-    ========================================= */
+        isSubmitting = true;
+        setLoading(true);
 
-    if (learnButton) {
-        learnButton.addEventListener("click", function () {
-            // The anchor opens Microsoft Learn in a new tab.
-            // No account credentials are requested by this website.
-        });
-    }
+        showMessage(
+            "Saving your Microsoft Learn ID. Please wait...",
+            "info"
+        );
 
-    /* =========================================
-       5. MICROSOFT LEARN ID VALIDATION
-    ========================================= */
+        const controller = new AbortController();
 
-    function showLearnIdMessage(message, type) {
-        if (!learnIdMessage) return;
+        const timeoutId = setTimeout(() => {
+            controller.abort();
+        }, 30000);
 
-        learnIdMessage.textContent = message;
-        learnIdMessage.className = "learn-id-message " + type;
-    }
+        try {
 
-    if (learnIdInput) {
-        learnIdInput.addEventListener("input", function () {
-            if (learnIdMessage) {
-                learnIdMessage.textContent = "";
-                learnIdMessage.className = "learn-id-message";
-            }
-        });
-    }
+            const response = await fetch(REGISTRATION_API_URL, {
 
-    if (continueToExtended) {
-        continueToExtended.addEventListener("click", function () {
-            if (!learnIdInput) return;
+                method: "POST",
 
-            const learnId = learnIdInput.value.trim();
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
 
-            if (!learnId) {
-                showLearnIdMessage(
-                    "Please enter your Microsoft Learn ID before continuing.",
-                    "error"
-                );
+                body: JSON.stringify(payload),
 
-                learnIdInput.focus();
-                return;
-            }
+                mode: "cors",
+                cache: "no-store",
+                signal: controller.signal
 
-            if (learnId.length < 3) {
-                showLearnIdMessage(
-                    "Please check your Microsoft Learn ID and try again.",
-                    "error"
-                );
+            });
 
-                learnIdInput.focus();
-                return;
-            }
+            const responseText = await response.text();
 
-            /*
-             * Save the entered ID for the next page in this browser session.
-             * This checks that a value was entered, not that Microsoft has
-             * verified the ID. The ID can be submitted to Excel later once
-             * the backend workflow has been connected.
-             */
+            let result = null;
 
             try {
-                sessionStorage.setItem("studentMicrosoftLearnId", learnId);
-            } catch (error) {
-                showLearnIdMessage(
-                    "Your browser could not save this step. Please enable session storage and try again.",
-                    "error"
-                );
-                return;
+                result = JSON.parse(responseText);
+            } catch {
+                result = null;
             }
 
-            showLearnIdMessage(
-                "Thank you! Taking you to the next step...",
+            if (!response.ok) {
+
+                throw new Error(
+                    result && result.message
+                        ? result.message
+                        : "The server could not process your Microsoft Learn ID."
+                );
+
+            }
+
+            // Only proceed when the Worker explicitly confirms success.
+            if (!result || result.success !== true) {
+
+                throw new Error(
+                    result && result.message
+                        ? result.message
+                        : "We could not confirm that your Microsoft Learn ID was saved."
+                );
+
+            }
+
+            // Remember successful completion for this browser session.
+            try {
+
+                sessionStorage.setItem(
+                    "studentMicrosoftLearnId",
+                    microsoftLearnID
+                );
+
+                sessionStorage.setItem(
+                    "studentLearnIdSubmitted",
+                    "true"
+                );
+
+            } catch (storageError) {
+
+                console.warn(
+                    "Session storage unavailable.",
+                    storageError
+                );
+
+            }
+
+            showMessage(
+                "Your Microsoft Learn ID has been saved successfully! Redirecting...",
                 "success"
             );
 
-            continueToExtended.disabled = true;
+            form.reset();
 
-            setTimeout(function () {
+            // Continue to the next registration stage.
+            setTimeout(() => {
+
                 window.location.href = "extended-registration.html";
-            }, reduceMotion ? 0 : 700);
-        });
-    }
-});
+
+            }, 1500);
+
+        } catch (error) {
+
+            console.error(
+                "Microsoft Learn ID submission error:",
+                error
+            );
+
+            let errorMessage =
+                "We could not confirm that your Microsoft Learn ID was saved. Please try again.";
+
+            if (error.name === "AbortError") {
+
+                errorMessage =
+                    "The request timed out. Please check your Excel registration record before trying again.";
+
+            } else if (error instanceof TypeError) {
+
+                errorMessage =
+                    "Unable to connect to the registration service. Check your internet connection and try again.";
+
+            } else if (error.message) {
+
+                errorMessage = error.message;
+
+            }
+
+            showMessage(errorMessage, "error");
+
+        } finally {
+
+            clearTimeout(timeoutId);
+
+            isSubmitting = false;
+            setLoading(false);
+
+        }
+
+    });
+
+})();
