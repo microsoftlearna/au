@@ -1,0 +1,107 @@
+/* Microsoft Student Ambassadors registration page */
+:root {
+    --primary-blue: #0078d4;
+    --dark-blue: #005a9e;
+    --text-dark: #242424;
+    --text-muted: #616161;
+    --border-color: #d1d1d1;
+    --white: #ffffff;
+    --success: #0b6a0b;
+    --error: #a4262c;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background:
+        linear-gradient(120deg, rgba(4, 25, 48, .76), rgba(0, 91, 158, .48)),
+        url("../images/get-started.png") center / cover fixed no-repeat;
+}
+.registration-header {
+    min-height: 76px;
+    padding: 14px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    color: #fff;
+    background: rgba(10, 25, 42, .42);
+    border-bottom: 1px solid rgba(255,255,255,.22);
+    backdrop-filter: blur(10px);
+}
+.back-link { color: #fff; text-decoration: none; font-weight: 600; font-size: 14px; }
+.back-link:hover { text-decoration: underline; }
+.brand { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; font-size: 15px; font-weight: 700; }
+.brand img { width: 42px; height: 42px; object-fit: contain; }
+.registration-container { width: 100%; max-width: 1040px; margin: 0 auto; padding: 44px 22px 58px; }
+.registration-intro { text-align: center; max-width: 760px; margin: 0 auto 28px; color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,.25); }
+.eyebrow { display: inline-block; color: #cfeaff; font-size: 12px; font-weight: 800; letter-spacing: 2px; margin-bottom: 10px; }
+.registration-intro h1 { font-size: clamp(28px, 4vw, 42px); line-height: 1.15; margin: 0 0 14px; }
+.registration-intro p { margin: 0 auto; max-width: 690px; font-size: 16px; }
+.registration-card {
+    background: rgba(255,255,255,.97);
+    padding: clamp(22px, 4vw, 40px);
+    border: 1px solid rgba(255,255,255,.7);
+    border-radius: 18px;
+    box-shadow: 0 20px 65px rgba(0,0,0,.28);
+}
+.form-heading { margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid #e8e8e8; }
+.form-heading h2 { margin: 0 0 5px; font-size: 25px; }
+.form-heading p { margin: 0; color: var(--text-muted); font-size: 14px; }
+.required { color: var(--error); }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 21px 20px; }
+.form-group { display: flex; flex-direction: column; min-width: 0; }
+.full-width { grid-column: 1 / -1; }
+.form-group label { font-size: 14px; font-weight: 650; margin-bottom: 7px; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+}
+.form-group input, .form-group select { min-height: 48px; }
+.form-group textarea { min-height: 145px; resize: vertical; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary-blue); box-shadow: 0 0 0 3px rgba(0,120,212,.14); }
+.form-group small { margin-top: 6px; color: var(--text-muted); font-size: 12px; }
+.privacy-note { margin: 25px 0 18px; padding: 13px 15px; border-left: 3px solid var(--primary-blue); background: #f0f6fc; color: #424242; font-size: 13px; }
+.form-message { display: none; margin: 0 0 16px; padding: 12px 14px; border-radius: 8px; font-size: 14px; overflow-wrap: anywhere; }
+.form-message.success { display: block; background: #dff6dd; color: #0b5a08; }
+.form-message.error { display: block; background: #fde7e9; color: #a4262c; }
+.form-message.info { display: block; background: #e8f3fc; color: #004578; }
+#submitButton {
+    width: 100%; min-height: 54px; padding: 14px 22px; margin-top: 4px;
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    border: 0; border-radius: 8px; background: var(--primary-blue); color: #fff;
+    font: inherit; font-size: 16px; font-weight: 750; cursor: pointer;
+    transition: background .2s, transform .2s;
+}
+#submitButton:hover { background: var(--dark-blue); transform: translateY(-1px); }
+#submitButton:focus-visible { outline: 3px solid #83caff; outline-offset: 3px; }
+#submitButton:disabled { opacity: .65; cursor: wait; transform: none; }
+.form-footnote { margin: 12px 0 0; color: var(--text-muted); font-size: 12px; text-align: center; }
+.registration-footer { padding: 20px; text-align: center; background: rgba(10,25,42,.68); color: #fff; }
+.registration-footer p { margin: 0; font-size: 13px; }
+@media (max-width: 680px) {
+    .registration-header { padding: 13px 5%; align-items: flex-start; flex-direction: column-reverse; gap: 10px; }
+    .brand { font-size: 13px; }
+    .brand img { width: 35px; height: 35px; }
+    .registration-container { padding: 30px 14px 38px; }
+    .form-grid { grid-template-columns: 1fr; gap: 18px; }
+    .full-width { grid-column: auto; }
+    .registration-intro p { font-size: 14px; }
+    .registration-card { border-radius: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
