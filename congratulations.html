@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Microsoft Learn Center registration confirmation - Adeleke University.">
+    <title>Registration Successful | Microsoft Learn Center</title>
+
+    <link rel="icon" href="assets/images/mia_logo.webp" type="image/webp">
+    <link rel="stylesheet" href="assets/css/congratulations.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="brand">
+                <img src="assets/images/mia_logo.webp" alt="Microsoft Learn Center Logo">
+                <span>Microsoft Learn Center</span>
+            </a>
+
+            <a href="index.html" class="home-link">Home</a>
+        </div>
+    </header>
+
+    <main class="page-container">
+
+        <section class="congratulations-card">
+
+            <div class="success-icon" aria-hidden="true">
+                <span>&#10003;</span>
+            </div>
+
+            <p class="eyebrow">REGISTRATION RECEIVED</p>
+
+            <h1>Congratulations!</h1>
+
+            <p class="welcome-message">
+                Your registration with the Microsoft Learn Center,
+                Adeleke University, has been received successfully.
+            </p>
+
+            <div class="next-step">
+                <h2>One more step to complete your registration</h2>
+
+                <p>
+                    Please provide your Microsoft Learn account ID below.
+                    This will allow us to connect your learning profile
+                    with your student registration record.
+                </p>
+            </div>
+
+            <form id="learnIdForm" novalidate>
+
+                <div class="form-group">
+                    <label for="matricNumber">Matric Number</label>
+                    <input
+                        type="text"
+                        id="matricNumber"
+                        name="matricNumber"
+                        placeholder="Enter your matric number"
+                        autocomplete="off"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="microsoftLearnID">Microsoft Learn ID</label>
+                    <input
+                        type="text"
+                        id="microsoftLearnID"
+                        name="microsoftLearnID"
+                        placeholder="Enter your Microsoft Learn ID"
+                        autocomplete="off"
+                        required
+                    >
+                    <small>
+                        Sign in to your Microsoft Learn profile to find your
+                        Learn ID. Make sure you enter the correct ID.
+                    </small>
+                </div>
+
+                <div id="learnIdMessage" class="form-message"
+                     role="status" aria-live="polite"></div>
+
+                <button type="submit" id="learnIdSubmitButton">
+                    <span class="button-text">Submit Microsoft Learn ID</span>
+                    <span class="button-loader" aria-hidden="true"></span>
+                </button>
+
+            </form>
+
+            <div class="help-note">
+                <p>
+                    Don't have a Microsoft Learn account yet?
+                    <a href="https://learn.microsoft.com/" target="_blank"
+                       rel="noopener noreferrer">Create or access your account</a>.
+                </p>
+            </div>
+
+            <div class="progress-note">
+                <span class="progress-line"></span>
+                <p>Final step: Microsoft Learn profile verification</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            &copy; <span id="currentYear"></span>
+            Microsoft Learn Center | Adeleke University, Ede
+        </p>
+    </footer>
+
+    <script src="assets/js/congratulations.js"></script>
+
+</body>
+</html>
